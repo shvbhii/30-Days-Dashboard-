@@ -1,0 +1,27 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  /* Add smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Default light theme background */
+  @apply bg-light-background;
+}
+
+.dark body {
+  /* New, vibrant gradient for the dark theme */
+  background: linear-gradient(
+    -45deg,
+    #030712, /* dark-background */
+    #1e293b, /* slate-800 */
+    #334155, /* slate-700 */
+    #030712  /* dark-background */
+  );
+  background-size: 400% 400%;
+  @apply animate-gradient-bg;
+}
