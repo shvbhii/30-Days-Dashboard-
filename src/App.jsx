@@ -41,7 +41,10 @@ function App() {
           </motion.h1>
           
           <motion.p variants={item} className="mt-4 max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-300">
-            Welcome to my coding challenge portfolio! Each project is a snapshot of daily learning and "Vibe Coding"—where creativity and AI-assisted development meet.
+            A month-long challenge to build and ship one web project every day.<br/> <br/>
+            Not just about coding it was about balancing DSA practice, hackathons, and daily deadlines. Learning <b>consistency, time management, and discipline</b> along the way.<br />
+            Some projects were simple experiments, others turned into tools I still use, but each one was a step forward! <br /> <br />
+            This dashboard is a snapshot of the journey, bringing all 30 projects together in one place.
           </motion.p>
           
           <motion.a
