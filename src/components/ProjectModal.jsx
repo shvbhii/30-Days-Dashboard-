@@ -32,19 +32,20 @@ function ProjectModal({ project, onClose }) {
           key="modal"
           variants={modalVariants}
           onClick={(e) => e.stopPropagation()}
-          className="relative max-w-6xl w-full"
+          className="relative max-w-6xl w-full max-h-[90vh] overflow-y-auto"
         >
           <button
             onClick={onClose}
-            className="absolute top-0 right-0 text-2xl text-zinc-500 hover:text-light-primary dark:hover:text-dark-primary transition-colors z-30"
+            className="absolute top-3 right-3 text-xl text-zinc-500 hover:text-light-primary dark:hover:text-dark-primary transition-colors z-30
+                       bg-light-surface/50 dark:bg-dark-surface/50 rounded-full p-2 leading-none"
             aria-label="Close modal"
           >
             <FaTimes />
           </button>
           
-          <div className="grid grid-cols-1 md:grid-cols-12 md:gap-x-4 items-center">
+          {/* --- UPDATED: Added gap-y-4 for mobile spacing and removed it for desktop --- */}
+          <div className="grid grid-cols-1 gap-y-4 md:grid-cols-12 md:gap-y-0 md:gap-x-4 items-center">
 
-            {/* --- IMAGE PANEL (Slightly smaller to give details more room) --- */}
             <motion.div 
               className="md:col-span-7 w-full rounded-xl shadow-2xl bg-zinc-100 dark:bg-black overflow-hidden"
               initial={{x: -50, opacity: 0}}
@@ -57,10 +58,10 @@ function ProjectModal({ project, onClose }) {
               />
             </motion.div>
           
-            {/* --- DETAILS PANEL (Wider and starts earlier for more space) --- */}
             <motion.div 
+              // --- UPDATED: Removed the problematic negative margin `mt-[-50px]` ---
               className="relative md:col-start-6 md:col-span-7 w-full z-10
-                         mt-[-50px] md:mt-0 p-8 
+                         p-6 md:p-8 
                          bg-light-surface/80 dark:bg-dark-surface/80 
                          backdrop-blur-xl rounded-xl shadow-2xl 
                          border border-white/20 dark:border-zinc-700"
@@ -73,7 +74,6 @@ function ProjectModal({ project, onClose }) {
                 <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white mt-2 mb-3">
                   {project.title}
                 </h2>
-                {/* --- Increased max-height for more visible text --- */}
                 <p className="text-zinc-600 dark:text-zinc-300 mb-6 text-sm max-h-40 overflow-y-auto whitespace-pre-wrap">
                   {project.description}
                 </p>

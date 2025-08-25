@@ -8,10 +8,11 @@ function Header() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      {/* --- UPDATED: REMOVED max-w-7xl and mx-auto --- */}
+    // --- UPDATED: Added background and blur for better visibility ---
+    <header className="fixed top-0 left-0 right-0 z-50 bg-light-background/80 dark:bg-dark-background/80 backdrop-blur-sm">
       <nav className="flex items-center justify-between p-4 lg:px-8">
-        <div className="text-lg font-bold">
+        {/* --- UPDATED: Adjusted font size for mobile --- */}
+        <div className="text-base sm:text-lg font-bold">
           Shubhi Sharma | July 2025
         </div>
         <motion.button

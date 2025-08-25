@@ -24,12 +24,12 @@ function ProjectCard({ project, onViewDetails }) {
         <img
           src={project.screenshot}
           alt={project.title}
-          className="w-full h-56 object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105"
+          // --- UPDATED: Responsive image height ---
+          className="w-full h-48 sm:h-56 object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
       </div>
       
       <div className="p-6 flex flex-col flex-grow">
-        {/* --- NEW "DAY" BADGE --- */}
         <span className="mb-2 text-xs font-bold uppercase tracking-wider 
                          bg-light-primary/10 text-light-primary 
                          dark:bg-dark-primary/20 dark:text-dark-primary 
@@ -37,7 +37,8 @@ function ProjectCard({ project, onViewDetails }) {
           Day {project.id}
         </span>
 
-        <h3 className="text-xl font-bold mb-2 text-zinc-900 dark:text-white flex-grow">
+        {/* --- UPDATED: Adjusted font size for consistency --- */}
+        <h3 className="text-lg sm:text-xl font-bold mb-2 text-zinc-900 dark:text-white flex-grow">
           {project.title}
         </h3>
         <button

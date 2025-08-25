@@ -30,17 +30,20 @@ function App() {
     <div className="text-zinc-800 dark:text-zinc-200">
       <Header />
 
-      <section className="min-h-screen flex flex-col items-center justify-center text-center p-4 relative">
+      {/* --- UPDATED: Added more responsive padding --- */}
+      <section className="min-h-screen flex flex-col items-center justify-center text-center p-6 sm:p-8 relative">
         <motion.div variants={container} initial="hidden" animate="show" className="flex flex-col items-center">
           <motion.h1
             variants={item}
-            className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-shadow-lg"
+            // --- UPDATED: Added smaller base font size for mobile ---
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-shadow-lg"
           >
             <span className="text-zinc-900 dark:text-white">30 Days</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-dark-primary to-dark-secondary"> 30 Projects</span>
           </motion.h1>
           
-          <motion.p variants={item} className="mt-4 max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-300">
+          {/* --- UPDATED: Adjusted base text size for better mobile readability --- */}
+          <motion.p variants={item} className="mt-4 max-w-2xl text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300">
             A month-long challenge to build and ship one web project every day.<br/> <br/>
             Not just about coding it was about balancing DSA practice, hackathons, and daily deadlines. Learning <b>consistency, time management, and discipline</b> along the way.<br />
             Some projects were simple experiments, others turned into tools I still use, but each one was a step forward! <br /> <br />
@@ -63,11 +66,10 @@ function App() {
         </a>
       </section>
       
-      {/* --- UPDATED: REMOVED max-w-6xl for a full-width layout --- */}
       <main id="projects-grid" className="py-24 px-4 sm:px-6 lg:px-8">
-         <h2 className="text-4xl font-bold text-center mb-12">Explore the Projects</h2>
+         {/* --- UPDATED: Adjusted heading size for mobile --- */}
+         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Explore the Projects</h2>
         <motion.div 
-          /* --- UPDATED: Added xl and 2xl column classes to fill the screen --- */
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8"
           initial="hidden"
           whileInView="visible"
